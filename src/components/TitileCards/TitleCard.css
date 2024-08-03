@@ -1,0 +1,149 @@
+/* Base styles (for larger screens) */
+.title_card {
+  box-sizing: border-box;
+  height: 305px; /* Added unit 'px' */
+  margin-bottom: 10px;
+}
+
+.title_card h2 {
+  height: 20px;
+}
+
+.card_list {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  margin: 10px;
+}
+
+.card_list::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out,
+    height 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  height: 240px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.card p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card .netflixImg {
+  width: 240px;
+  border-radius: 10px;
+}
+
+.card .play_button {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-bottom: 15px;
+  width: 40px;
+}
+
+.card:hover .play_button {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  background-color: rgb(31, 79, 48);
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+  .title_card {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .title_card h2 {
+    font-size: 20px;
+  }
+  .card_list {
+    height: 250px;
+  }
+  .card .netflixImg {
+    width: 220px;
+  }
+  .card .play_button {
+    width: 35px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .title_card {
+    height: 200px;
+    /* margin-top: 20px; */
+    margin-bottom: 0;
+    /* background-color: aliceblue; */
+  }
+  .title_card h2 {
+    font-size: 18px;
+  }
+  .card_list {
+    height: auto; /* Adjust height for grid layout */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    padding: 10px;
+  }
+  .card {
+    height: auto;
+    margin: 0;
+  }
+  .card .netflixImg {
+    width: 150px;
+  }
+  .card .play_button {
+    width: 30px;
+  }
+  .card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title_card {
+    height: auto;
+    margin: 10px 0;
+  }
+  .title_card h2 {
+    font-size: 16px;
+  }
+  .card_list {
+    height: auto;
+    overflow-x: scroll;
+    padding: 10px;
+  }
+  .card {
+    height: auto;
+    margin: 0;
+  }
+  .card .netflixImg {
+    width: 120px;
+  }
+  .card .play_button {
+    width: 25px;
+  }
+  .card p {
+    font-size: 10px;
+  }
+}
